@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IVMainWindow</class>
+ <widget class="QMainWindow" name="IVMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>I-V Characterization</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QTabWidget" name="IVtabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>350</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="MeasParamtab">
+       <attribute name="title">
+        <string>Measurement Parameters</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_10">
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Sample data</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::RichText</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0" colspan="3">
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_10">
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>Sample name</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>nameLineEdit</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QLineEdit" name="nameLineEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QCheckBox" name="addDatecheckBox">
+                <property name="text">
+                 <string>Add date and time to filename</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0" colspan="3">
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Sample Area(cm^2)</string>
+                </property>
+                <property name="buddy">
+                 <cstring>areaSpinBox</cstring>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QDoubleSpinBox" name="areaSpinBox">
+                <property name="minimum">
+                 <double>0.010000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="DetailspushButton">
+                <property name="text">
+                 <string>Add extra sample details</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="0" colspan="3">
+             <layout class="QHBoxLayout" name="horizontalLayout_25">
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Save results in directory...</string>
+                </property>
+                <property name="buddy">
+                 <cstring>browseButton</cstring>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+               <widget class="QComboBox" name="directoriescomboBox">
+                <property name="minimumSize">
+                 <size>
+                  <width>300</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="browseButton">
+                <property name="text">
+                 <string>Browse</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Measurement  parameters</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::RichText</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QListWidget" name="MeasTypelistWidget">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>125</width>
+                <height>95</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>125</width>
+                <height>95</height>
+               </size>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="currentRow">
+               <number>0</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Dark IV</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Illuminated IV</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Voc photodecay</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Jsc stability</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QStackedWidget" name="MeasTypestackedWidget">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>270</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>270</width>
+                <height>51</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="nothing"/>
+              <widget class="QWidget" name="irradiation">
+               <layout class="QHBoxLayout" name="horizontalLayout_23">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <property name="sizeConstraint">
+                   <enum>QLayout::SetMinimumSize</enum>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>Irradiation (mW/cm2)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <property name="buddy">
+                     <cstring>IrradspinBox</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="IrradspinBox">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="maximum">
+                     <number>150</number>
+                    </property>
+                    <property name="value">
+                     <number>100</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page_3">
+               <widget class="QSpinBox" name="VocNPointsspinBox">
+                <property name="geometry">
+                 <rect>
+                  <x>200</x>
+                  <y>10</y>
+                  <width>70</width>
+                  <height>33</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>70</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>2500</number>
+                </property>
+                <property name="value">
+                 <number>1000</number>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_5">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>16</y>
+                  <width>191</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Number of points(max 2500)</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="page_4">
+               <widget class="QLabel" name="label_6">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>16</y>
+                  <width>161</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Measurement time(min)</string>
+                </property>
+               </widget>
+               <widget class="QSpinBox" name="minutesSpinBox">
+                <property name="geometry">
+                 <rect>
+                  <x>180</x>
+                  <y>10</y>
+                  <width>70</width>
+                  <height>33</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>70</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="minimum">
+                 <number>5</number>
+                </property>
+                <property name="maximum">
+                 <number>300</number>
+                </property>
+                <property name="value">
+                 <number>30</number>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+               <widget class="QLabel" name="vmin">
+                <property name="text">
+                 <string>Volt Minimum (V)</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+                <property name="buddy">
+                 <cstring>VminSpinBox</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="VminSpinBox">
+                <property name="decimals">
+                 <number>3</number>
+                </property>
+                <property name="minimum">
+                 <double>-20.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>20.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.001000000000000</double>
+                </property>
+                <property name="value">
+                 <double>-1.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Current limit</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::AutoText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="buddy">
+                 <cstring>currentLimitcomboBox</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="currentLimitcomboBox">
+                <property name="currentIndex">
+                 <number>4</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>1.05 uA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10.5 uA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>105 uA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>1.05 mA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>21 mA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>105 mA</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>1.05 A</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+               <widget class="QLabel" name="vmax">
+                <property name="text">
+                 <string>Volt Maximum (V)</string>
+                </property>
+                <property name="buddy">
+                 <cstring>VmaxSpinBox</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="VmaxSpinBox">
+                <property name="decimals">
+                 <number>3</number>
+                </property>
+                <property name="minimum">
+                 <double>-20.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>20.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.001000000000000</double>
+                </property>
+                <property name="value">
+                 <double>1.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+               <widget class="QLabel" name="sweepstep">
+                <property name="text">
+                 <string>Voltage Step (V)</string>
+                </property>
+                <property name="buddy">
+                 <cstring>sweepStepSpinBox</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="sweepStepSpinBox">
+                <property name="maximum">
+                 <double>21.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.010000000000000</double>
+                </property>
+                <property name="value">
+                 <double>0.010000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_27">
+            <item>
+             <widget class="QListWidget" name="SweepTypelistWidget">
+              <property name="minimumSize">
+               <size>
+                <width>140</width>
+                <height>51</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>140</width>
+                <height>51</height>
+               </size>
+              </property>
+              <property name="currentRow">
+               <number>0</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Simple Sweep</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hysteresis Sweep</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QStackedWidget" name="SweepstackedWidget">
+              <property name="minimumSize">
+               <size>
+                <width>271</width>
+                <height>111</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>271</width>
+                <height>111</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page">
+               <widget class="QWidget" name="layoutWidget_3">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>30</y>
+                  <width>183</width>
+                  <height>35</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <item>
+                  <widget class="QLabel" name="sweepdel">
+                   <property name="text">
+                    <string>Sweep Delay (s)</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>sweepDelSpinBox</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="sweepDelSpinBox">
+                   <property name="singleStep">
+                    <double>0.010000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>0.010000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="page_2">
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>0</y>
+                  <width>251</width>
+                  <height>110</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QCheckBox" name="ZerocheckBox">
+                   <property name="text">
+                    <string>Start from zero?</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <widget class="QLabel" name="Forwardsweepdel">
+                     <property name="text">
+                      <string>Forward Sweep Delay (s)</string>
+                     </property>
+                     <property name="buddy">
+                      <cstring>sweepDelSpinBox</cstring>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QDoubleSpinBox" name="ForwardsweepDelSpinBox">
+                     <property name="singleStep">
+                      <double>0.010000000000000</double>
+                     </property>
+                     <property name="value">
+                      <double>0.010000000000000</double>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_7">
+                   <item>
+                    <widget class="QLabel" name="Backwardsweepdel">
+                     <property name="text">
+                      <string>Backward Sweep Delay (s)</string>
+                     </property>
+                     <property name="buddy">
+                      <cstring>sweepDelSpinBox</cstring>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QDoubleSpinBox" name="BackwardsweepDelSpinBox">
+                     <property name="singleStep">
+                      <double>0.010000000000000</double>
+                     </property>
+                     <property name="value">
+                      <double>0.010000000000000</double>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QPushButton" name="closeButton">
+              <property name="text">
+               <string>Close</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="measureButton">
+              <property name="text">
+               <string>Measure</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Resultstab">
+       <attribute name="title">
+        <string>Results</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <item>
+         <layout class="QVBoxLayout" name="ivplot"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPreferences">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionConfigure"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionProgram_Help"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_I_V"/>
+   </widget>
+   <addaction name="menuPreferences"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionProgram_Help">
+   <property name="text">
+    <string>Program Help</string>
+   </property>
+  </action>
+  <action name="actionAbout_I_V">
+   <property name="text">
+    <string>About this program</string>
+   </property>
+  </action>
+  <action name="actionConfigure">
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>SweepTypelistWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>SweepstackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>519</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MeasTypelistWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>MeasTypestackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>426</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>IVMainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>69</x>
+     <y>556</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

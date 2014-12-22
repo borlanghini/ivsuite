@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="filequit.png">images/filequit.png</file>
+        <file alias="back.png">images/back.png</file>
+        <file alias="home.png">images/home.png</file>
+        <file alias="icon.png">images/icon1.svg</file>
+        <file alias="calculate.png">images/gear_32.png</file>
+        <file alias="graph.png">images/graph.png</file>
+        <file>help/procmenu.html</file>
+        <file>help/filemenu.html</file>
+        <file>help/index.html</file>
+    </qresource>
+</RCC>
